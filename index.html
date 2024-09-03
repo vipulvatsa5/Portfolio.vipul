@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/OIP.jpg" class="logo" alt="Logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>Hi, I'm <br><span>Vipul Kumar</span></h1>
+            </div>
+        </div>
+    </div>
+    <!------------about----------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/IMG20220830115410.jpg" alt="About Me">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am Vipul Kumar, an engineering student in Computer Science.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" data-tab-value="#skills">Skills</p>
+                        <p class="tab-links" data-tab-value="#experience">Experience</p>
+                        <p class="tab-links" data-tab-value="#education">Education</p>
+                    </div>
+                    <div class="tab-contains active-tab" id="skills">
+                        <ul>
+                            <li><span>Programmer</span></li>
+                            <li><span>Web Developer</span><br>Frontend Developer</li>
+                            <li><span>Data Science</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contains" id="experience">
+                        <ul>
+                            <li><span>Web Developer</span><br>Frontend Developer</li>
+                            <li><span>Data Science</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contains" id="education">
+                        <ul>
+                            <li><span>2nd year engineering student at Amity University, Gwalior</span></li>
+                            <li><span>12th IATS Public School, Gwalior</span></li>
+                            <li><span>10th Bright Career, Purnia</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------services------------------------------>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <h2>Web Design</h2>
+                    <p style="font-weight: bold;">Skills :</p>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <p>React</p>
+                    <p>Node.js</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div>
+                    <h2>Programmer</h2>
+                    <p style="font-weight: bold;">Languages Known:</p>
+                    <p>C++</p>
+                    <p>JavaScript</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div>
+                    <h2>Data Analytics</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis harum at et labore facere
+                        mollitia eveniet praesentium aliquid magnam voluptatibus quia ex ipsa, laboriosam fugiat esse
+                        doloremque ducimus neque tempora.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------Portfolio------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/food-website.png" alt="food-website">
+                    <div class="layer">
+                        <h3>Food Ordering Website</h3>
+                        <p>Go to the website</p>
+                        <a href="#">http://localhost:5173/ </a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/portfolio.png" alt="Portfolio">
+                    <div class="layer">
+                        <h3>Portfolio</h3>
+                        <p>The current website is my work for the portfolio</p>
+                        <a href="#">@</a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work3.jpg" alt="PowerBI">
+                    <div class="layer">
+                        <h3>PowerBI</h3>
+                        <p>See the Result</p>
+                        <a href="#">@</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!------CONTACT-------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact me</h1>
+                    <p>vipulvatsa5@gmail.com</p>
+                    <p>6204177031</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tabs = document.querySelectorAll('.tab-links');
+        const tabContents = document.querySelectorAll('.tab-contains');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = document.querySelector(tab.dataset.tabValue);
+                tabContents.forEach(tabContent => {
+                    tabContent.classList.remove('active-tab');
+                });
+                tabs.forEach(tab => {
+                    tab.classList.remove('active-link');
+                });
+                target.classList.add('active-tab');
+                tab.classList.add('active-link');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
